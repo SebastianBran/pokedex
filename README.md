@@ -36,6 +36,14 @@
     getPokemonSpeciesById(@PathVariable Integer id)
 ```
 
+## Documentation
+
+Documentation with swagger
+
+```
+    http://localhost:8080/web-service-poke-api-docs-ui.html
+```
+
 # Fronent Web Application - Pokedex - Vue.js
 
 ## Usage
