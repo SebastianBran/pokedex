@@ -4,14 +4,11 @@ import com.example.webservicepokeapi.domain.entity.pagination.NamedApiResourceLi
 import com.example.webservicepokeapi.domain.entity.pokemon.Pokemon;
 import com.example.webservicepokeapi.domain.entity.pokemonSpecies.PokemonSpecies;
 import com.example.webservicepokeapi.domain.service.PokemonService;
-import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 public class PokemonController {
     private final PokemonService pokemonService;
 
@@ -20,7 +17,6 @@ public class PokemonController {
         this.pokemonService = pokemonService;
     }
 
-    @Operation(summary = "Get Pokemons", description = "Get Pokemons", tags = {"Pokemon"})
     @GetMapping("pokemon")
     public NamedApiResourceList getPokemons(@RequestParam Integer offset,
                                             @RequestParam Integer limit) {
